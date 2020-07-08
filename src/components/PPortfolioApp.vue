@@ -4,14 +4,12 @@
       <v-layout>
         <v-flex>
           <v-card
-            :href="app.platforms[0].link"
-            target="_blank"
             elevation="5"
             style="border-radius: 20px"
             width="100px"
             height="100px"
           >
-            <v-img :src="logo(app.logo)" />
+            <a v-bind:href=app.url target="_blank"><v-img :src="logo(app.logo)" /></a>
           </v-card>
         </v-flex>
         <v-flex xs7>
@@ -34,12 +32,6 @@
           </v-flex>
         </template>
       </v-layout>
-      <div v-if="app.code.link">
-        <div class="title mt-2">Code</div>
-        <v-btn icon :href="app.code.link" target="_blank">
-          <v-icon>{{app.code.icon}}</v-icon>
-        </v-btn>
-      </div>
     </v-card-text>
   </v-card>
 </template>

@@ -3,7 +3,7 @@
     <v-img
       dark
       max-height="500px"
-      src="https://images.unsplash.com/photo-1505238680356-667803448bb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+      src="../assets/mainVisual.jpg"
     >
       <v-layout fill-height align-center>
         <v-container>
@@ -30,7 +30,7 @@
           <div
             class="body-1 mt-3"
           >
-          事業のアイディアはあるが実現する手段をお探しの方、アイディアの壁打ちをしたい方、お気軽に問い合わせください。
+          「エンジニアのチーム立ち上げ」や「事業のアイディアはあるが実現する手段が見つからない」という方、「アイディアの壁打ちをしたい」方など、お気軽に問い合わせください。
           </div>
         </v-flex>
       </v-layout>
@@ -42,7 +42,7 @@
           <v-layout wrap>
             <template v-for="(app, i) in apps">
               <v-flex :key="i" xs12 sm6 md4>
-                <p-portfolio-app :app="app" />
+                <p-portfolio-app :app="app" style="white-space:pre-line" />
               </v-flex>
             </template>
           </v-layout>
@@ -50,7 +50,7 @@
       </v-layout>
       <v-layout wrap my-5>
         <v-flex xs12 mb-5>
-          <div class="display-1 font-weight-bold" id="contact">Send me a message... :)</div>
+          <div class="display-1 font-weight-bold" id="contact">Contact</div>
         </v-flex>
         <template v-for="(contact, i) in contactLinks">
           <v-flex sm6 md4 xs12 :key="i">
@@ -75,113 +75,144 @@ export default {
   data() {
     return {
       aboutText:
-      `スタートアップにエンジニアとしてジョインしつつ、個人開発や新規事業の立ち上げにもジョインしています。\nエンジニアだけでなくマーケティング視点やアクター視点での開発を主に得意としています。
-        `,
+      `スタートアップにエンジニアとしてジョインしつつ、個人開発や新規事業の立ち上げにもジョインしています。\nエンジニアだけでなくマーケティング視点やアクター視点での開発を主に得意としています。\nエンジニアの教育事業にも興味があり、少しでもなりたい自分を実現できるような世の中に変わるように社会にコミットしていきます。`,
       apps: [
         {
-          name: "ヒトマワリ",
+          name: `人事・採用管理\nシステム`,
           logo: "human-resources.png",
-          platforms: [
-            {
-              name: "apple",
-              icon: "mdi-apple",
-              link: "https://apps.apple.com/us/app/food-vision/id1437083324"
-            }
-          ],
+          platforms: [{}],
           description:
-            "One day my friend and I were eating at a restaurant and she suddenly asked me what an item looks like. I looked up at her an told her I didnt know. Then she told me why dont you make an app where you can see the pictures of food thats on the menu? Then I made Food Vision. :)",
+          `企業の人事管理と評価や採用を一括でできるSaaSのサービスの開発に携わっていました。\n主にサーバーサイドエンジニアとしてAPI開発\nQAエンジニアとしてテスト要件の作成から結合テストまでを実施していました。\n \n`,
+          url: "https://www.hitomawari.jp/",
           technologies: [
             {
-              name: "Swift",
-              icon: "mdi-language-swift",
+              name: "Ruby",
+              icon: "mdi-language-ruby",
               link: ""
             },
             {
-              name: "XCode",
-              icon: "mdi-apple-ios",
+              name: "Rails",
+              icon: "mdi-language-ruby-on-rails",
               link: ""
             },
             {
-              name: "Firebase",
-              icon: "mdi-firebase",
+              name: "Docker",
+              icon: "mdi-docker",
               link: ""
-            }
+            },
+            {
+              name: "AWS",
+              icon: "mdi-aws",
+              link: ""
+            },
           ],
-          code: {
-            name: "github",
-            icon: "mdi-github",
-            link: ""
-          }
         },
         {
-          name: "",
-          price: "COMING SOON",
-          logo: "finance-logo.png",
-          platforms: [
+          name: `ベビシッター\nCtoCマッチング\nサービス`,
+          logo: "baby.png",
+          description:`訪問型ベビーシッターを求めるユーザーとベビーシッターのマッチングサービスプラットフォームの開発にサーバーサイドエンジニアとして参画していました。\n \n \n`,
+          url: "https://kidsline.me/",
+          technologies: [
             {
-              name: "apple",
-              icon: "mdi-apple",
+              name: "Ruby",
+              icon: "mdi-language-ruby",
               link: ""
             },
             {
-              name: "android",
-              icon: "mdi-android",
+              name: "Rails",
+              icon: "mdi-language-ruby-on-rails",
+              link: ""
+            },
+            {
+              name: "Docker",
+              icon: "mdi-docker",
+              link: ""
+            },
+            {
+              name: "AWS",
+              icon: "mdi-aws",
               link: ""
             }
           ],
-          description:
-            "My sister always kept asking me about my money situation and how I was doing there, so I decided that I would make an app that we could use to track our finances. Using Plaid I was able to get access to my bank account and hers and connect the 2 using firebase Functions and Auth to secure the app. ",
+        },
+        {
+          name: `法人不動産営業向け\n物件管理システム`,
+          logo: "building.png",
+          description:`法人向け不動産仲介会社で、社内の営業向けに既存の物件管理システムをリプレイスしました。\nエンジニアのチームビルディングやPMといった上流工程から実際の開発からテストまで包括的に携わりました。開発は基本的にはサーバーサイドの開発にコミットしていました。`,
           technologies: [
             {
-              name: "VueJS",
-              icon: "mdi-vuejs",
+              name: "Ruby",
+              icon: "mdi-language-ruby",
               link: ""
             },
             {
-              name: "Vuetify",
-              icon: "mdi-vuetify",
+              name: "Rails",
+              icon: "mdi-language-ruby-on-rails",
               link: ""
             },
             {
-              name: "Cordova",
-              icon: "mdi-cordova",
-              link: ""
-            },
-            {
-              name: "Firebase",
-              icon: "mdi-firebase",
-              link: ""
-            },
-            {
-              name: "Node",
+              name: "Node.js",
               icon: "mdi-nodejs",
               link: ""
-            }
-          ],
-          code: {
-            name: "github",
-            icon: "mdi-github",
-            link: "https://github.com/uzirthapa/finance-app"
-          }
-        },
-        {
-          name: "Baguette",
-          price: "COMING SOON",
-          logo: "baguette-logo.png",
-          platforms: [
+            },
             {
-              name: "apple",
-              icon: "mdi-apple",
+              name: "TypeScript",
+              icon: "mdi-language-typescript",
               link: ""
             },
             {
-              name: "android",
-              icon: "mdi-android",
+              name: "Docker",
+              icon: "mdi-docker",
+              link: ""
+            },
+            {
+              name: "AWS",
+              icon: "mdi-aws",
               link: ""
             }
           ],
-          description:
-            "Similar to 'Bag it'. I wanted to make a swippable market place where people could swipe on goods from a store. Also it got rid of all the extra distractions and you are able to focus on just one item at a time. Still need to build the recommender system. But I am working on it! :)",
+        },
+        {
+          name: `法人不動産営業向け\n物件提案システム`,
+          logo: "sales.png",
+          description:`法人向け不動産仲介会社で、社内向けの物件管理システムの追加システムとして開発しました。\n条件に合った物件情報をテナントに対して詳細資料と合わせて共有できるようなシステムを追加で開発し、営業の人的コスト削減と売り上げ貢献にコミットしました。\n \n`,
+          technologies: [
+            {
+              name: "Node.js",
+              icon: "mdi-nodejs",
+              link: ""
+            },
+            {
+              name: "TypeScript",
+              icon: "mdi-language-typescript",
+              link: ""
+            },
+            {
+              name: "GraphQL",
+              icon: "mdi-graphql",
+              link: ""
+            },
+            {
+              name: "React",
+              icon: "mdi-react",
+              link: ""
+            },
+            {
+              name: "Docker",
+              icon: "mdi-docker",
+              link: ""
+            },
+            {
+              name: "AWS",
+              icon: "mdi-aws",
+              link: ""
+            }
+          ],
+        },
+        {
+          name: "病児保育向け\n保育園検索サービス",
+          logo: "childcare.png",
+          description: `「お子さんが急に熱を出した時に、預かってくれる保育園の預ける流れまでが煩雑でどうしても預けにくい」というニーズを複数のお母さんから聞いたので、\nデザイナーの知人と組んで個人開発レベルでプロダクトを開発中。サーバーサイドとクライアントサイドの両方を担当。`,
           technologies: [
             {
               name: "VueJS",
@@ -194,203 +225,69 @@ export default {
               link: ""
             },
             {
-              name: "Cordova",
-              icon: "mdi-cordova",
+              name: "Ruby",
+              icon: "mdi-language-ruby",
+              link: ""
+            },
+            {
+              name: "Rails",
+              icon: "mdi-language-ruby-on-rails",
+              link: ""
+            },
+            {
+              name: "Docker",
+              icon: "mdi-docker",
+              link: ""
+            },
+            {
+              name: "AWS",
+              icon: "mdi-aws",
+              link: ""
+            }
+          ],
+        },
+        {
+          name: "ポートフォリオサイト",
+          logo: "portfolio.png",
+          description: `「何をやってきたか？」を可視化かつ記録するためにポートフォリオサイトを作成。\n今後も機能追加や改修予定。\n \n \n \n \n`,
+          technologies: [
+            {
+              name: "VueJS",
+              icon: "mdi-vuejs",
+              link: ""
+            },
+            {
+              name: "Vuetify",
+              icon: "mdi-vuetify",
               link: ""
             },
             {
               name: "Firebase",
               icon: "mdi-firebase",
               link: ""
-            }
+            },
+
           ],
-          code: {
-            name: "github",
-            icon: "mdi-github",
-            link: ""
-          }
         },
-        {
-          name: "Facebook UI",
-          price: "OPEN SOURCE",
-          logo: "facebook-logo.png",
-          platforms: [
-            {
-              name: "web",
-              icon: "mdi-web",
-              link: "https://uzirthapa.github.io/facebook-ui/dist/"
-            }
-          ],
-          description:
-            "One Day build - I saw this guy on youtube building apps in 1 day and I wanted to see if I could make a better version of the Facebook UI. I didn't design it but I found this design on dribbble and just thought I would make the designers UI come to life.",
-          technologies: [
-            {
-              name: "VueJS",
-              icon: "mdi-vuejs",
-              link: ""
-            },
-            {
-              name: "Vuetify",
-              icon: "mdi-vuetify",
-              link: ""
-            }
-          ],
-          code: {
-            name: "github",
-            icon: "mdi-github",
-            link: "https://github.com/uzirthapa/facebook-ui"
-          }
-        },
-        {
-          name: "Firebird Fitness",
-          price: "LIVE",
-          logo: "firebird-logo.png",
-          platforms: [
-            {
-              name: "web",
-              icon: "mdi-web",
-              link: "https://firebirdfitness.xyz/"
-            }
-          ],
-          description:
-            "I needed a place to put my workouts that we do at work, So I made a place where I could store them and also if I forgot a certian exercise I could easily search it and watch a video on how to do it.",
-          technologies: [
-            {
-              name: "VueJS",
-              icon: "mdi-vuejs",
-              link: "https://vuejs.org/"
-            },
-            {
-              name: "Vuetify",
-              icon: "mdi-vuetify",
-              link: "https://vuetifyjs.com/"
-            },
-            {
-              name: "Firebase",
-              icon: "mdi-firebase",
-              link: "https://firebase.google.com/"
-            }
-          ],
-          code: {
-            name: "github",
-            icon: "mdi-github",
-            link: "https://github.com/uzirthapa/Firebird-Fitness"
-          }
-        },
-        {
-          name: "Ecommerce Biolerplate",
-          price: "OPEN SOURCE",
-          logo: "logo.png",
-          platforms: [
-            {
-              name: "web",
-              icon: "mdi-web",
-              link: "https://ecommerce-skeleton.firebaseapp.com/"
-            }
-          ],
-          description:
-            "We Wanted to help people who want to create an ecommerce store with VueJS and Vuetify have a template that had authentication and payments integrated right from the get go. So now you can hit the ground running! In Collaboration with Aatish Balla.",
-          technologies: [
-            {
-              name: "VueJS",
-              icon: "mdi-vuejs",
-              link: "https://vuejs.org/"
-            },
-            {
-              name: "Vuetify",
-              icon: "mdi-vuetify",
-              link: "https://vuetifyjs.com/"
-            },
-            {
-              name: "Firebase",
-              icon: "mdi-firebase",
-              link: "https://firebase.google.com/"
-            },
-            {
-              name: "Stripe",
-              icon: "mdi-credit-card-outline",
-              link: ""
-            }
-          ],
-          code: {
-            name: "github",
-            icon: "mdi-github",
-            link: "https://github.com/uzirthapa/ecommerce-skeleton"
-          }
-        },
-        {
-          name: "Sacred Summits",
-          price: "LIVE",
-          logo: "ss-logo-high-res.png",
-          platforms: [
-            {
-              name: "web",
-              icon: "mdi-web",
-              link: "https://sacred-summits-web.firebaseapp.com/"
-            }
-          ],
-          description:
-            "Sacred Summits was looking for a redesign of their website and they asked me to come up with a sample. This is what I came up with.",
-          technologies: [
-            {
-              name: "VueJS",
-              icon: "mdi-vuejs",
-              link: "https://vuejs.org/"
-            },
-            {
-              name: "Vuetify",
-              icon: "mdi-vuetify",
-              link: "https://vuetifyjs.com/"
-            },
-            {
-              name: "Firebase",
-              icon: "mdi-firebase",
-              link: "https://firebase.google.com/"
-            }
-          ],
-          code: {
-            name: "github",
-            icon: "mdi-github",
-            link: ""
-          }
-        }
       ],
       contactLinks: [
         {
           name: "Email",
-          value: "uzirthapa@gmail.com",
-          link: "mailto:uzirthapa@gmail.com",
+          value: "tatsuaki0905.climbing@gmail.com",
+          link: "mailto:tatsuaki0905.climbing@gmail.com",
           icon: "mdi-email"
         },
         {
-          name: "LinkedIn",
-          value: "Uzir Thapa",
-          link: "https://www.linkedin.com/in/uzir-thapa/",
-          icon: "mdi-linkedin"
-        },
-        {
-          name: "YouTube",
-          value: "Uzir Thapa",
-          link: "https://www.youtube.com/channel/UCd7Qo_G7c8Sp4-TwG_ObSvQ",
-          icon: "mdi-youtube"
-        },
-        {
           name: "Github",
-          value: "uzirthapa",
-          link: "https://github.com/uzirthapa/",
+          value: "TatsuakiIto",
+          link: "https://github.com/TatsuakiIto",
           icon: "mdi-github"
         },
         {
           name: "Facebook",
-          value: "Uzir Thapa",
-          link: "https://www.facebook.com/uzirthapa",
+          value: "Tatsuaki Ito",
+          link: "https://www.facebook.com/tatsuaki.itoh",
           icon: "mdi-facebook"
-        },
-        {
-          name: "Instagram",
-          value: "@uzir.thapa",
-          link: "https://www.instagram.com/uzir.thapa/",
-          icon: "mdi-instagram"
         }
       ]
     };
